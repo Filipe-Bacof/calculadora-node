@@ -5,9 +5,13 @@ const app = express();
 
 app.use(express.json());
 
-app.use('/calculator', router);
+app.use('/api', router);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+module.exports = app;
+
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
-});
+  });
+}
