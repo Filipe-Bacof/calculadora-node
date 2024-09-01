@@ -21,7 +21,7 @@ const config = {
   collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  // collectCoverageFrom: undefined,
+  collectCoverageFrom: ["<rootDir>/src/**/*.js"],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: "coverage",
@@ -35,12 +35,10 @@ const config = {
   coverageProvider: "v8",
 
   // A list of reporter names that Jest uses when writing coverage reports
-  // coverageReporters: [
-  //   "json",
-  //   "text",
-  //   "lcov",
-  //   "clover"
-  // ],
+  coverageReporters: [
+    "text",
+    "lcov",
+  ],
 
   // An object that configures minimum threshold enforcement for coverage results
   // coverageThreshold: undefined,
@@ -101,6 +99,16 @@ const config = {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
+  // ALGUMAS OPÇÕES PARA ESTA OPÇÃO:
+  // "ts-jest" para projetos Typescript
+  // "jest-expo" para projetos React Native com Expo
+  // "react-native" para projetos React Native
+  // "jest-puppeteer" para testes de navegador com Puppeteer
+  // "jest-playwright-preset" para testes de navegador com Playwright
+  // "jest-preset-angular" para projetos Angular
+  // "babel-jest" para Babel
+  // Se o seu projeto é em JavaScript puro utilizando Node.js
+  // você não precisa de um preset específico, deixar comentado
   // preset: undefined,
 
   // Run tests from one or more projects
@@ -154,10 +162,9 @@ const config = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  // testMatch: [
-  //   "**/__tests__/**/*.[jt]s?(x)",
-  //   "**/?(*.)+(spec|test).[tj]s?(x)"
-  // ],
+  testMatch: [
+    "**/__tests__/**/*.js",
+  ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
